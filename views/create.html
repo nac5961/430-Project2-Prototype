@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Payment Tracker</title>
+	
+	<!-- Imported Scripts -->
+	<script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+	<script crossorigin src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+	
+	<!-- Custom Scripts -->
+	<script src="/assets/homeBundle.js"></script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="/assets/img/favicon.png"/>
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	
+	<!-- Bootstrap Date-Picker Plugin -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="../hosted/style.css"/>
+</head>
+<body> 
+	<header>
+		<a id="logo" href="/">Tracker</a>
+		<a id="about-button" class="nav" href="/about">About</a>
+		<a id="home-button" class="nav" href="/">Home</a>
+	</header>
+	
+	<div id="form-creation-container">
+		<button id="create-button" class="active-button" >Create New</button>
+		<button id="update-button" class="inactive-button">Update Existing</button>
+		
+		<!-- Create New -->
+		<form id="creation-form">
+			<label>Payment</label>
+			<input class="input-button" type="text" name="paymentName" placeholder="Payment Name" />
+			<label>Cost</label>
+			<input class="input-button" type="number" name="paymentCost" placeholder="$Amount" />
+			<label>Due Date</label>
+			<input class="input-button" data-provide="datepicker" data-date-format="mm/dd/yyyy" placeholder="MM/DD/YYYY" />
+			<input id="creation-form-submit" class="submit input-button" type="submit" value="Create Payment" />
+		</form>
+		
+		<!-- Update Existing -->
+		<!--
+		<form id="creation-form">
+			<label>Payment</label>
+			<input class="input-button" type="text" name="paymentName" placeholder="Payment Name" />
+			<label>Updated Cost</label>
+			<input class="input-button" type="number" name="paymentCost" placeholder="$Amount" />
+			<label>Updated Due Date</label>
+			<input class="input-button" data-provide="datepicker" data-date-format="mm/dd/yyyy" placeholder="MM/DD/YYYY" />
+			<input id="creation-form-submit" class="submit input-button" type="submit" value="Update Payment" />
+		</form>
+		-->
+	</div>
+	
+	<script>
+		function init(){
+			$('#sandbox-container .input-group.date').datepicker({});
+		}
+		
+		window.onload = init;
+	</script>
+</body>
+</html>
